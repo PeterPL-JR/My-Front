@@ -4,15 +4,18 @@ const ctx = canvas.getContext("2d");
 const WIDTH = 1280;
 const HEIGHT = 720;
 
-function init() {
-    canvas.width = WIDTH;
-    canvas.height = HEIGHT;
-
+function joinGame() {
     const socket = io();
     socket.emit("init-client");
     socket.on("init-client", function(data) {
-        update();
+        initGame(data);
     });
+}
+
+function initGame(data) {
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
+    update();
 }
 
 function update() {
