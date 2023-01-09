@@ -4,6 +4,9 @@ const ctx = canvas.getContext("2d");
 const WIDTH = 1280;
 const HEIGHT = 720;
 
+const TILE_SIZE = 96;
+let tiles = [];
+
 function joinGame() {
     const socket = io();
     socket.emit("init-client");
@@ -15,6 +18,10 @@ function joinGame() {
 function initGame(data) {
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
+
+    tiles = data.tiles;
+    loadTilesImages(tiles);
+
     update();
 }
 

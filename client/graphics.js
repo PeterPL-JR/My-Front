@@ -44,3 +44,9 @@ function loadImage(path) {
     image.src = path;
     return image;
 }
+
+function loadTilesImages(tilesArray) {
+    for(let tile of tilesArray) {
+        tile.img = new ImgAsset(tile.path, TILE_SIZE, TILE_SIZE);
+    }
+}
