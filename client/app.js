@@ -7,6 +7,9 @@ const HEIGHT = 720;
 const TILE_SIZE = 96;
 let TILES_OBJECTS = [];
 
+let tiles = [];
+let mapWidth, mapHeight;
+
 function joinGame() {
     const socket = io();
     socket.emit("init-client");
@@ -18,6 +21,10 @@ function joinGame() {
 function initGame(data) {
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
+
+    tiles = data.map.tiles;
+    mapWidth = data.map.width;
+    mapHeight = data.map.height;
 
     TILES_OBJECTS = data.tiles;
     loadTilesImages(TILES_OBJECTS);

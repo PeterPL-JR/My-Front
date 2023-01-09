@@ -27,5 +27,6 @@ function initServer() {
     tiles = mapsEngine.loadTiles();
 }
 function initClient(socket) {
-    socket.emit("init-client", {tiles});
+    const map = mapsEngine.createMap();
+    socket.emit("init-client", {tiles, map});
 }
