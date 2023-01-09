@@ -1,11 +1,14 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-const WIDTH = 1280;
-const HEIGHT = 720;
-
 const TILE_SIZE = 96;
 let TILES_OBJECTS = [];
+
+const SCREEN_MAP_WIDTH = 13;
+const SCREEN_MAP_HEIGHT = 7;
+
+const WIDTH = SCREEN_MAP_WIDTH * TILE_SIZE;
+const HEIGHT = SCREEN_MAP_HEIGHT * TILE_SIZE;
 
 let tiles = [];
 let mapWidth, mapHeight;
