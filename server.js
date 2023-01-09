@@ -16,6 +16,7 @@ app.use(express.static(
     path.join(__dirname + "/client/")
 ));
 io.on("connection", function(socket) {
+    initClient(socket);
 });
 server.listen(PORT, function() {
     initServer();
@@ -24,4 +25,7 @@ server.listen(PORT, function() {
 
 function initServer() {
     tiles = mapsEngine.loadTiles();
+}
+function initClient(socket) {
+    socket.emit("init-client", {tiles});
 }
