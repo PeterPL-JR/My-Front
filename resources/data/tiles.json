@@ -1,9 +1,11 @@
 {
     "grass": {
+        "id": 0,
         "path": "grass.png",
         "solid": false
     },
     "water": {
+        "id": 1,
         "path": "water.png",
         "solid": true
     }
