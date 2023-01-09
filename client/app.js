@@ -5,7 +5,7 @@ const WIDTH = 1280;
 const HEIGHT = 720;
 
 const TILE_SIZE = 96;
-let tiles = [];
+let TILES_OBJECTS = [];
 
 function joinGame() {
     const socket = io();
@@ -19,8 +19,8 @@ function initGame(data) {
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
 
-    tiles = data.tiles;
-    loadTilesImages(tiles);
+    TILES_OBJECTS = data.tiles;
+    loadTilesImages(TILES_OBJECTS);
 
     update();
 }
