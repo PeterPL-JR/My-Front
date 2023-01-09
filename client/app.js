@@ -25,6 +25,8 @@ function initGame(data) {
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
 
+    initKeyboard();
+
     tiles = data.map.tiles;
     mapWidth = data.map.width;
     mapHeight = data.map.height;
