@@ -40,4 +40,19 @@ function render() {
     const CLEAR_COLOR = "#121212";
     ctx.fillStyle = CLEAR_COLOR;
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    renderTiles();
+}
+
+function renderTiles() {
+    for(let x = 0; x < mapWidth; x++) {
+        for(let y = 0; y < mapHeight; y++) {
+            const tile = TILES_OBJECTS[tiles[x][y]];
+
+            const tileX = TILE_SIZE * x;
+            const tileY = TILE_SIZE * y;
+
+            tile.img.draw(tileX, tileY);
+        }
+    }
 }
