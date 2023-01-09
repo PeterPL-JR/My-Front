@@ -9,7 +9,7 @@ const {Server} = require("socket.io");
 const io = new Server(server);
 const PORT = process.env.PORT || 1107;
 
-const mapsEngine = require("./server/map");
+const mapsEngine = require("./server/maps");
 let tiles = {};
 
 app.use(express.static(
