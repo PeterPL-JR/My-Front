@@ -1,0 +1,10 @@
+{
+    "grass": {
+        "path": "grass.png",
+        "solid": "false"
+    },
+    "water": {
+        "path": "water.png",
+        "solid": "true"
+    }
+}
